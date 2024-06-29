@@ -1,2 +1,2 @@
 # treble_evo
-Patches to build Evolution X GSI.
+Files to build Evolution X GSI.

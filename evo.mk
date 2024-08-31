@@ -2,11 +2,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, vendor/lineage/config/BoardConfigSoong.mk)
 $(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk)
 
-override PRODUCT_NAME := treble_arm64_bgN
-override PRODUCT_DEVICE := evolution_gsi_arm64_ab
-override PRODUCT_BRAND := google
-override PRODUCT_SYSTEM_BRAND := google
-override PRODUCT_MODEL := Evolution X 9.3
+override PRODUCT_MODEL := Evolution X 9.3 - GSI
 
 # No kernel image
 TARGET_NO_KERNEL_OVERRIDE := true

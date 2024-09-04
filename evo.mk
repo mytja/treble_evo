@@ -14,7 +14,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.system.ota.json_url=https://raw.githubusercontent.com/kaii-lb/treble_everest/14/ota.json
+    ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_aosp/main/ota.json
 
 # SELinux
 SELINUX_IGNORE_NEVERALLOWS := true

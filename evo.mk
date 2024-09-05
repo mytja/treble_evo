@@ -2,7 +2,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, vendor/lineage/config/BoardConfigSoong.mk)
 $(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk)
 
-override PRODUCT_MODEL := Evolution X 9.3 - GSI
+override PRODUCT_MODEL := Evolution X GSI
 
 # No kernel image
 TARGET_NO_KERNEL_OVERRIDE := true
@@ -11,6 +11,9 @@ PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 #BUILD_BROKEN_DUP_RULES := true
 TARGET_BOOT_ANIMATION_RES := 1080
+
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_FACE_UNLOCK := true
 
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -25,6 +28,5 @@ EVO_BUILD_TYPE := Unofficial
 
 # Additional packages
 PRODUCT_PACKAGES += \
-  AuroraStorePrivilegedExtension \
-  F-DroidPrivilegedExtension \
-  OpenEUICC
+  OpenEUICC \
+  FaceUnlockService

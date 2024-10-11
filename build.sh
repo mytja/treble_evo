@@ -20,7 +20,7 @@ compress() {
     echo "----- Compressing the variant -----"
     cd $ROOT_DIR/out/target/product/tdgsi_arm64_ab
     xz -9 -T0 -v -z system.img
-    mv system.img.xz ~/Downloads/evolution_arm64_bgN$variant-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz
+    mv system.img.xz $HOME/Downloads/evolution_arm64_bgN$variant-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz
 }
 
 echo "----- Building slim variant -----"
@@ -39,7 +39,7 @@ compress
 
 echo "----- Done! -----"
 echo "Start time: $START_TIME"
-slim_size=$(wc -c < ~/Downloads/evolution_arm64_bgN_slim-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
+slim_size=$(wc -c < $HOME/Downloads/evolution_arm64_bgN_slim-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
 echo "Slim size: $slim_size"
-normal_size=$(wc -c < ~/Downloads/evolution_arm64_bgN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
+normal_size=$(wc -c < $HOME/Downloads/evolution_arm64_bgN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
 echo "Normal size: $normal_size"

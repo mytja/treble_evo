@@ -38,11 +38,15 @@ Run this command in the ROM folder:
 
 This command will apply all TrebleDroid and personal patches. If any patch fails to apply correctly, as indicated by `### FAILED APPLYING` output, you need to apply the patch manually. Steps to do so are described in short on [treble_evo_patches repo](https://github.com/mytja/treble_evo_patches/blob/main/README.md).
 
+> [!WARNING]
+> Superuser removal patch might not get applied using this script, despite being applyable. While this is being investigated, please apply it manually.
+> `cd ~/evo/build/make && git am ~/evo/patches/0002-personal/platform_build/000*-remove-su-from-builds.patch`
+
 ## Adapting for Evolution X
 Run the following commands:
 ```bash
- cd device/phh/treble
- bash generate.sh ~/evo/device/mytja/evo/evo.mk
+cd ~/evo/device/phh/treble
+bash generate.sh ~/evo/device/mytja/evo/evo.mk
 ```
 
 This will generate all appropriate treble configurations.
@@ -56,8 +60,16 @@ export CCACHE_COMPRESS=1
 export CCACHE_MAXSIZE=50G # 50 GB
 ```
 
+## Build Treble app
+This GSI uses a modified Treble app in order to achieve more functionality. You need to build the Treble app.
+```bash
+cd ~/evo/treble_app
+
+./build.sh release
+```
+
 ## Compilation 
-In the ROM folder, run this to start compilation:
+In the ROM folder (`~/evo`), run this to start compilation:
 
 ```bash
 source build/envsetup.sh

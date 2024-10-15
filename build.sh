@@ -8,11 +8,12 @@ ccache -M 50G -F 0
 # Ensure that "su" is removed (the patch doesn't apply using patch-applying script for some dumbfuck reason)
 echo "----- Removing su from builds -----"
 cd $ROOT_DIR/build/make
-git am $ROOT_DIR/patches/0002-personal/platform_build/0004-remove-su-from-builds.patch
+git am $ROOT_DIR/patches/0002-personal/platform_build/000*-remove-su-from-builds.patch
 git am --abort # if the patch has already been aplied, abort the process
 
 START_TIME=$(date +%s)
 RELEASE_DATE=$(date +%Y%m%d)
+RELEASE_DATE_FMT=$(date +%Y-%m-%d)
 
 cd ~/evo
 
@@ -43,3 +44,21 @@ slim_size=$(wc -c < $HOME/Downloads/evolution_arm64_bgN_slim-$EVO_VERSION-unoffi
 echo "Slim size: $slim_size"
 normal_size=$(wc -c < $HOME/Downloads/evolution_arm64_bgN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
 echo "Normal size: $normal_size"
+
+echo "----- OTA -----"
+echo "{
+    \"version\": \"$RELEASE_DATE_FMT (Evolution X $EVO_VERSION)\",
+    \"date\": \"$START_TIME\",
+    \"variants\": [
+        {
+            \"name\": \"treble_arm64_bgN\",
+            \"size\": \"$normal_size\",
+            \"url\": \"https://github.com/mytja/treble_evo/releases/download/$RELEASE_DATE/evolution_arm64_bgN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz\"
+        },
+        {
+            \"name\": \"treble_arm64_bgN_slim\",
+            \"size\": \"$slim_size\",
+            \"url\": \"https://github.com/mytja/treble_evo/releases/download/$RELEASE_DATE/evolution_arm64_bgN_slim-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz\"
+        }
+    ]
+}"

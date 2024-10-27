@@ -33,5 +33,5 @@ PRODUCT_PACKAGES += \
   FaceUnlockService
 
 # Evolution X maintainer overlay
-DEVICE_PACKAGE_OVERLAYS += \
-  $(LOCAL_PATH)/overlay-evolution \
+#DEVICE_PACKAGE_OVERLAYS += \
+#  $(LOCAL_PATH)/overlay-evolution \

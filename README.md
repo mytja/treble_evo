@@ -16,7 +16,7 @@ cd ~/evo
 
 ## Initalize the Treble Evolution X repo
 ```bash
-repo init -u https://github.com/Evolution-X/manifest -b udc
+repo init --depth=1 -u https://github.com/Evolution-X/manifest -b udc
 ```
 
 ## Clone the Manifest
@@ -27,7 +27,7 @@ git clone https://github.com/mytja/treble_manifest.git -b evo .repo/local_manife
 
 ## Sync the repository
 ```bash
-repo sync -j$(nproc --all)
+repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 ```
 
 ### Apply the patches

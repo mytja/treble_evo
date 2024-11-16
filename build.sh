@@ -1,4 +1,4 @@
-EVO_VERSION="9.5"
+EVO_VERSION="9.6"
 ROOT_DIR="$HOME/evo"
 
 cd $ROOT_DIR

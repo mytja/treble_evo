@@ -2,7 +2,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, vendor/lineage/config/BoardConfigSoong.mk)
 $(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk)
 
-PRODUCT_DEVICE := arm64_bgN
+PRODUCT_DEVICE := evolution_arm64_bgN
 PRODUCT_BRAND := google
 PRODUCT_SYSTEM_BRAND := google
 PRODUCT_MANUFACTURER := google

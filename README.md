@@ -16,13 +16,13 @@ cd ~/evo
 
 ## Initalize the Treble Evolution X repo
 ```bash
-repo init --depth=1 -u https://github.com/Evolution-X/manifest -b udc
+repo init --depth=1 -u https://github.com/Evolution-X/manifest -b vic
 ```
 
 ## Clone the Manifest
 This adds necessary dependencies for the Evolution X GSI.
 ```bash
-git clone https://github.com/mytja/treble_manifest.git -b evo .repo/local_manifests
+git clone https://github.com/mytja/treble_manifest.git -b evo-vic .repo/local_manifests
 ```
 
 ## Sync the repository
@@ -39,8 +39,7 @@ Run this command in the ROM folder:
 This command will apply all TrebleDroid and personal patches. If any patch fails to apply correctly, as indicated by `### FAILED APPLYING` output, you need to apply the patch manually. Steps to do so are described in short on [treble_evo_patches repo](https://github.com/mytja/treble_evo_patches/blob/main/README.md).
 
 > [!WARNING]
-> Superuser removal patch might not get applied using this script, despite being applyable. While this is being investigated, please apply it manually.
-> `cd ~/evo/build/make && git am ~/evo/patches/0002-personal/platform_build/000*-remove-su-from-builds.patch`
+> Some patches don't get applied automatically by the script. Apply those manually.
 
 ## Adapting for Evolution X
 Run the following commands:

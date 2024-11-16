@@ -22,7 +22,7 @@ repo init --depth=1 -u https://github.com/Evolution-X/manifest -b udc
 ## Clone the Manifest
 This adds necessary dependencies for the Evolution X GSI.
 ```bash
-git clone https://github.com/mytja/treble_manifest.git -b evo .repo/local_manifests
+git clone https://github.com/mytja/treble_manifest.git -b evo-udc .repo/local_manifests
 ```
 
 ## Sync the repository

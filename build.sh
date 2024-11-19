@@ -8,7 +8,7 @@ ccache -M 50G -F 0
 # Ensure that "su" is removed (the patch doesn't apply using patch-applying script for some dumbfuck reason)
 echo "----- Removing su from builds -----"
 cd $ROOT_DIR/build/make
-git am $ROOT_DIR/patches/0002-personal/platform_build/000*-remove-su-from-builds.patch
+git am $ROOT_DIR/patches/0003-personal/platform_build/000*-remove-su-from-builds.patch
 git am --abort # if the patch has already been aplied, abort the process
 
 START_TIME=$(date +%s)

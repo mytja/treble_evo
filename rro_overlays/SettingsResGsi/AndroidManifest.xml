@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021 The LineageOS Project
+     Copyright (C) 2024 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.settings.overlay.evox-gsi">
+
+    <application android:allowBackup="false"/>
+    <overlay
+        android:isStatic="true"
+        android:priority="750"
+        android:targetPackage="com.android.settings" />
+</manifest>

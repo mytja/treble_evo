@@ -22,7 +22,7 @@ TARGET_SUPPORTS_64_BIT_APPS := true
 
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_evo/main/ota.json
+    ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_evo/udc/ota.json
 
 # SELinux
 #SELINUX_IGNORE_NEVERALLOWS := true

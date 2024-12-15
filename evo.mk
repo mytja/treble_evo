@@ -9,6 +9,8 @@ PRODUCT_MANUFACTURER := google
 PRODUCT_SYSTEM_MANUFACTURER := google
 PRODUCT_MODEL := Evolution X GSI
 
+WITH_ADB_INSECURE := true
+
 # No kernel image
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_NO_KERNEL_IMAGE := true
@@ -22,7 +24,7 @@ TARGET_SUPPORTS_64_BIT_APPS := true
 
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_evo/main/ota.json
+    ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_evo/vic/ota.json
 
 # SELinux
 #SELINUX_IGNORE_NEVERALLOWS := true

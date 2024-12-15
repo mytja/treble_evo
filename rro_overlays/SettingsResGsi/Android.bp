@@ -1,0 +1,12 @@
+//
+// Copyright (C) 2021 The LineageOS Project
+// Copyright (C) 2024 Evolution X
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "SettingsResGsi",
+    theme: "SettingsResGsi",
+    product_specific: true,
+}
+

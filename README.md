@@ -38,9 +38,6 @@ Run this command in the ROM folder:
 
 This command will apply all TrebleDroid and personal patches. If any patch fails to apply correctly, as indicated by `### FAILED APPLYING` output, you need to apply the patch manually. Steps to do so are described in short on [treble_evo_patches repo](https://github.com/mytja/treble_evo_patches/blob/main/README.md).
 
-> [!WARNING]
-> Some patches don't get applied automatically by the script. Apply those manually.
-
 ## Adapting for Evolution X
 Run the following commands:
 ```bash

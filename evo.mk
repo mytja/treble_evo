@@ -10,33 +10,26 @@ PRODUCT_SYSTEM_MANUFACTURER := google
 PRODUCT_MODEL := Evolution X GSI
 
 WITH_ADB_INSECURE := true
-
-# No kernel image
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_NO_KERNEL_IMAGE := true
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
-
-#BUILD_BROKEN_DUP_RULES := true
 TARGET_BOOT_ANIMATION_RES := 1080
-
-# To enable Face Unlock
-TARGET_SUPPORTS_64_BIT_APPS := true
+override TARGET_SUPPORTS_64_BIT_APPS := true # To enable Face Unlock. Override seems to be required.
 
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_evo/vic/ota.json
 
 # SELinux
-#SELINUX_IGNORE_NEVERALLOWS := true
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
 
 # Evolution X
 EVO_BUILD_TYPE := Unofficial
 
+# Evolution X overlays
+PRODUCT_PACKAGES += \
+  SettingsResGsi
+
 # Additional packages
 PRODUCT_PACKAGES += \
   OpenEUICC
-
-# Evolution X maintainer overlay
-#DEVICE_PACKAGE_OVERLAYS += \
-#  $(LOCAL_PATH)/overlay-evolution \

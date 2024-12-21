@@ -8,4 +8,5 @@
 
     <!-- Android version screen, build maintainer -->
     <string name="build_maintainer_summary" translatable="false">mytja</string>
+    <string name="build_maintainer_donate_url">https://github.com/mytja</string>
 </resources>

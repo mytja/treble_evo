@@ -1,7 +1,18 @@
-EVO_VERSION="9.6"
-ROOT_DIR="$HOME/evo"
+echo "  _____            _       _   _              __  __ "
+echo " | ____|_   _____ | |_   _| |_(_) ___  _ __   \ \/ / "
+echo " |  _| \ \ / / _ \| | | | | __| |/ _ \| '_ \   \  /  "
+echo " | |___ \ V / (_) | | |_| | |_| | (_) | | | |  /  \  "
+echo " |_____| \_/ \___/|_|\__,_|\__|_|\___/|_| |_| /_/\_\ "
+echo "                                                     "
 
+ROOT_DIR="$(pwd)"
 cd $ROOT_DIR
+
+EVO_VERSION="$(awk '/EVO_VERSION := / {print $3}' $ROOT_DIR/vendor/lineage/config/version.mk)"
+
+echo "Building Evolution X version $EVO_VERSION"
+echo "---------------------------"
+
 source build/envsetup.sh
 ccache -M 50G -F 0
 

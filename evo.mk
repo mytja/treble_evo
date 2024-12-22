@@ -36,5 +36,5 @@ PRODUCT_PACKAGES += \
   OpenEUICC
 
 # Evolution X maintainer overlay
-#DEVICE_PACKAGE_OVERLAYS += \
-#  $(LOCAL_PATH)/overlay-evolution \
+PRODUCT_PACKAGES += \
+  SettingsResGsi

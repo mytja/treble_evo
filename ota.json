@@ -1,16 +1,16 @@
 {
-    "version": "2024-11-17 (Evolution X 9.6)",
-    "date": "1731835879",
+    "version": "2024-12-22 (Evolution X 9.7)",
+    "date": "1734824657",
     "variants": [
         {
             "name": "treble_arm64_bgN",
-            "size": "1830455744",
-            "url": "https://github.com/mytja/treble_evo/releases/download/20241117/evolution_arm64_bgN-9.6-unofficial-20241117.img.xz"
+            "size": "1830515240",
+            "url": "https://github.com/mytja/treble_evo/releases/download/20241222/evolution_arm64_bgN-9.7-unofficial-20241222.img.xz"
         },
         {
             "name": "treble_arm64_bgN_slim",
-            "size": "1349022728",
-            "url": "https://github.com/mytja/treble_evo/releases/download/20241117/evolution_arm64_bgN_slim-9.6-unofficial-20241117.img.xz"
+            "size": "1349101900",
+            "url": "https://github.com/mytja/treble_evo/releases/download/20241222/evolution_arm64_bgN_slim-9.7-unofficial-20241222.img.xz"
         }
     ]
 }

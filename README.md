@@ -33,10 +33,10 @@ repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 ### Apply the patches
 Run this command in the ROM folder:
 ```bash
-./patches/apply-patches.sh .
+./patches/apply-all.sh .
 ```
 
-This command will apply all TrebleDroid and personal patches. If any patch fails to apply correctly, as indicated by `### FAILED APPLYING` output, you need to apply the patch manually. Steps to do so are described in short on [treble_evo_patches repo](https://github.com/mytja/treble_evo_patches/blob/main/README.md).
+This command will apply all TrebleDroid and personal patches. If any patch fails to apply correctly, as indicated by `### FAILED APPLYING` output, you need to apply the patch manually (the script will wait for you to apply it manually). Steps to do so are described in short on [treble_evo_patches repo](https://github.com/mytja/treble_evo_patches/blob/main/README.md).
 
 ## Adapting for Evolution X
 Run the following commands:

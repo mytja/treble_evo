@@ -1,7 +1,19 @@
-EVO_VERSION="10.0"
-ROOT_DIR="$HOME/evo"
+echo "  _____            _       _   _              __  __ "
+echo " | ____|_   _____ | |_   _| |_(_) ___  _ __   \ \/ / "
+echo " |  _| \ \ / / _ \| | | | | __| |/ _ \| '_ \   \  /  "
+echo " | |___ \ V / (_) | | |_| | |_| | (_) | | | |  /  \  "
+echo " |_____| \_/ \___/|_|\__,_|\__|_|\___/|_| |_| /_/\_\ "
+echo "                                                     "
 
+ROOT_DIR="$(pwd)"
 cd $ROOT_DIR
+
+EVO_VERSION="$(awk '/EVO_VERSION := / {print $3}' $ROOT_DIR/vendor/lineage/config/version.mk)"
+ANDROID_BUILD_VERSION="ap4a"
+
+echo "Building Evolution X version $EVO_VERSION ($ANDROID_BUILD_VERSION)"
+echo "---------------------------"
+
 source build/envsetup.sh
 ccache -M 50G -F 0
 
@@ -21,14 +33,14 @@ compress() {
 echo "----- Building slim variant -----"
 variant="_slim"
 cd $ROOT_DIR
-lunch treble_arm64_bgN_slim-userdebug
+lunch treble_arm64_bgN_slim-$ANDROID_BUILD_VERSION-userdebug
 make systemimage -j$(nproc --all)
 compress
 
 echo "----- Building normal variant -----"
 variant=""
 cd $ROOT_DIR
-lunch treble_arm64_bgN-userdebug
+lunch treble_arm64_bgN-$ANDROID_BUILD_VERSION-userdebug
 make systemimage -j$(nproc --all)
 compress
 

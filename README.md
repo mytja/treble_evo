@@ -72,7 +72,7 @@ source build/envsetup.sh
 
 ccache -M 50G -F 0
 
-lunch treble_arm64_bgN-ap3a-userdebug 
+lunch treble_arm64_bgN-ap4a-userdebug 
 
 make systemimage -j$(nproc --all)
 ```

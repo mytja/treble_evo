@@ -4,12 +4,12 @@
     "variants": [
         {
             "name": "treble_arm64_bgN",
-            "size": "1830515240",
+            "size": "1830472464",
             "url": "https://github.com/mytja/treble_evo/releases/download/20241222/evolution_arm64_bgN-9.7-unofficial-20241222.img.xz"
         },
         {
             "name": "treble_arm64_bgN_slim",
-            "size": "1349101900",
+            "size": "1349144984",
             "url": "https://github.com/mytja/treble_evo/releases/download/20241222/evolution_arm64_bgN_slim-9.7-unofficial-20241222.img.xz"
         }
     ]

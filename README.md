@@ -33,19 +33,10 @@ repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 ### Apply the patches
 Run this command in the ROM folder:
 ```bash
-./patches/apply-patches.sh .
+./patches/apply-all.sh .
 ```
 
 This command will apply all TrebleDroid and personal patches. If any patch fails to apply correctly, as indicated by `### FAILED APPLYING` output, you need to apply the patch manually. Steps to do so are described in short on [treble_evo_patches repo](https://github.com/mytja/treble_evo_patches/blob/main/README.md).
-
-## Adapting for Evolution X
-Run the following commands:
-```bash
-cd ~/evo/device/phh/treble
-bash generate.sh ~/evo/device/mytja/evo/evo.mk
-```
-
-This will generate all appropriate treble configurations.
 
 ### Turn On Caching
 You can speed up subsequent builds by adding these lines to your `~/.bashrc` OR `~/.zshrc` file:
@@ -72,7 +63,7 @@ source build/envsetup.sh
 
 ccache -M 50G -F 0
 
-lunch treble_arm64_bgN-ap4a-userdebug 
+lunch evolution_arm64_bgN-ap4a-userdebug 
 
 make systemimage -j$(nproc --all)
 ```
@@ -83,7 +74,7 @@ After compiling the GSI, you can run this to reduce the `system.img` file size:
 > You will need to decompress the output file to flash the `system.img`. In other words, you cannot flash this file directly.
 
 ```bash
-cd out/target/product/tdgsi_arm64_ab
+cd out/target/product/generic_arm64
 xz -9 -T0 -v -z system.img 
 ```
 

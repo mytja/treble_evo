@@ -25,23 +25,23 @@ cd ~/evo
 
 compress() {
     echo "----- Compressing the variant -----"
-    cd $ROOT_DIR/out/target/product/tdgsi_arm64_ab
+    cd $ROOT_DIR/out/target/product/generic_arm64
     xz -9 -T0 -v -z system.img
-    mv system.img.xz $HOME/Downloads/evolution_arm64_bgN$variant-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz
+    mv system.img.xz $HOME/Downloads/evolution_arm64_$variant-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz
 }
 
 echo "----- Building slim variant -----"
-variant="_slim"
+variant="bgN_slim"
 cd $ROOT_DIR
-lunch treble_arm64_bgN_slim-$ANDROID_BUILD_VERSION-userdebug
-make systemimage -j$(nproc --all)
+lunch evolution_arm64_bgN_slim-$ANDROID_BUILD_VERSION-userdebug
+make systemimage -j$(nproc --all) || exit
 compress
 
 echo "----- Building normal variant -----"
-variant=""
+variant="bgN"
 cd $ROOT_DIR
-lunch treble_arm64_bgN-$ANDROID_BUILD_VERSION-userdebug
-make systemimage -j$(nproc --all)
+lunch evolution_arm64_bgN-$ANDROID_BUILD_VERSION-userdebug
+make systemimage -j$(nproc --all) || exit
 compress
 
 echo "----- Done! -----"
@@ -57,12 +57,12 @@ echo "{
     \"date\": \"$START_TIME\",
     \"variants\": [
         {
-            \"name\": \"treble_arm64_bgN\",
+            \"name\": \"evolution_arm64_bgN\",
             \"size\": \"$normal_size\",
             \"url\": \"https://github.com/mytja/treble_evo/releases/download/$RELEASE_DATE/evolution_arm64_bgN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz\"
         },
         {
-            \"name\": \"treble_arm64_bgN_slim\",
+            \"name\": \"evolution_arm64_bgN_slim\",
             \"size\": \"$slim_size\",
             \"url\": \"https://github.com/mytja/treble_evo/releases/download/$RELEASE_DATE/evolution_arm64_bgN_slim-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz\"
         }

@@ -1,12 +1,9 @@
 TARGET_GAPPS_ARCH := arm64
 include build/make/target/product/aosp_arm64.mk
 $(call inherit-product, device/phh/treble/base.mk)
-$(call inherit-product, vendor/lineage/config/common_full_tablet.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk)
 $(call inherit-product, vendor/lineage/config/BoardConfigSoong.mk)
-$(call inherit-product, vendor/lineage/config/BoardConfigLineage.mk)
-
 
 # Overwrite the inherited "emulator" characteristics
 PRODUCT_CHARACTERISTICS := device
@@ -24,6 +21,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 override TARGET_SUPPORTS_64_BIT_APPS := true # To enable Face Unlock. Override seems to be required.
 override SELINUX_IGNORE_NEVERALLOWS := true
 override BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+override BOARD_EXT4_SHARE_DUP_BLOCKS := true
 
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

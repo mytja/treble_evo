@@ -79,7 +79,7 @@ After compiling the GSI, you can run this to reduce the `system.img` file size:
 > You will need to decompress the output file to flash the `system.img`. In other words, you cannot flash this file directly.
 
 ```bash
-cd out/target/product/generic_arm64
+cd out/target/product/tdgsi_arm64_ab
 xz -9 -T0 -v -z system.img 
 ```
 

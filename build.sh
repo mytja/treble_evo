@@ -25,27 +25,34 @@ cd ~/evo
 
 compress() {
     echo "----- Compressing the variant -----"
-    cd $ROOT_DIR/out/target/product/generic_arm64
+    cd $ROOT_DIR/out/target/product/tdgsi_arm64_ab
     xz -9 -T0 -v -z system.img
     mv system.img.xz $HOME/Downloads/evolution_arm64_$variant-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz
 }
 
+build() {
+    cd $ROOT_DIR
+    lunch evolution_arm64_$variant-$ANDROID_BUILD_VERSION-userdebug
+    make systemimage -j$(nproc --all) || exit
+    compress
+}
+
+echo "----- Building vanilla variant -----"
+variant="bvN"
+build
+
 echo "----- Building slim variant -----"
 variant="bgN_slim"
-cd $ROOT_DIR
-lunch evolution_arm64_bgN_slim-$ANDROID_BUILD_VERSION-userdebug
-make systemimage -j$(nproc --all) || exit
-compress
+build
 
 echo "----- Building normal variant -----"
 variant="bgN"
-cd $ROOT_DIR
-lunch evolution_arm64_bgN-$ANDROID_BUILD_VERSION-userdebug
-make systemimage -j$(nproc --all) || exit
-compress
+build
 
 echo "----- Done! -----"
 echo "Start time: $START_TIME"
+vanilla_size=$(wc -c < $HOME/Downloads/evolution_arm64_bvN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
+echo "Vanilla size: $slim_size"
 slim_size=$(wc -c < $HOME/Downloads/evolution_arm64_bgN_slim-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
 echo "Slim size: $slim_size"
 normal_size=$(wc -c < $HOME/Downloads/evolution_arm64_bgN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz)
@@ -65,6 +72,11 @@ echo "{
             \"name\": \"evolution_arm64_bgN_slim\",
             \"size\": \"$slim_size\",
             \"url\": \"https://github.com/mytja/treble_evo/releases/download/$RELEASE_DATE/evolution_arm64_bgN_slim-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz\"
+        },
+        {
+            \"name\": \"evolution_arm64_bvN\",
+            \"size\": \"$vanilla_size\",
+            \"url\": \"https://github.com/mytja/treble_evo/releases/download/$RELEASE_DATE/evolution_arm64_bvN-$EVO_VERSION-unofficial-$RELEASE_DATE.img.xz\"
         }
     ]
 }"

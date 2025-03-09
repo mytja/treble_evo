@@ -3,7 +3,7 @@
 </p>
 
 ### Building
-You'll need to get familiar with [Git and Repo](https://source.android.com/source/using-repo.html), as well as [How to build a GSI](https://github.com/phhusson/treble_experimentations/wiki/How-to-build-a-GSI%3F).
+You'll need to get familiar with [Git and Repo](https://source.android.com/source/using-repo.html), as well as [How to build a GSI](https://github.com/TrebleDroid/treble_experimentations/wiki/How-to-build-a-GSI%3F).
 
 ## Create Directories
 As a first step, you'll have to create and enter a folder with the appropriate name.

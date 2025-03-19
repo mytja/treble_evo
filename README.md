@@ -30,6 +30,11 @@ git clone https://github.com/mytja/treble_manifest.git -b evo-udc .repo/local_ma
 repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 ```
 
+In case of later Webview building issues, run the following command:
+```bash
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
+```
+
 ### Apply the patches
 Run this command in the ROM folder:
 ```bash

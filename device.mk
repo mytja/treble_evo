@@ -40,4 +40,6 @@ PRODUCT_PACKAGES += \
 
 # Additional packages
 PRODUCT_PACKAGES += \
-  OpenEUICC
+  OpenEUICC \
+  RevampedFMRadio \
+  libmtkfmjni

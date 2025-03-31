@@ -33,10 +33,7 @@ EVO_BUILD_TYPE := Unofficial
 
 # Additional packages
 PRODUCT_PACKAGES += \
-  OpenEUICC \
-  FMRadio \
-  libqcomfmjni \
-  libmtkfmjni
+  OpenEUICC
 
 # Evolution X maintainer overlay
 PRODUCT_PACKAGES += \

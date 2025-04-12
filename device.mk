@@ -24,6 +24,8 @@ override SELINUX_IGNORE_NEVERALLOWS := true
 override BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 override BOARD_EXT4_SHARE_DUP_BLOCKS := true
 
+TARGET_INCLUDE_ACCORD := false
+
 # OTA
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.system.ota.json_url=https://raw.githubusercontent.com/mytja/treble_evo/vic/ota.json
@@ -40,6 +42,4 @@ PRODUCT_PACKAGES += \
 
 # Additional packages
 PRODUCT_PACKAGES += \
-  OpenEUICC \
-  RevampedFMRadio \
-  libmtkfmjni
+  OpenEUICC

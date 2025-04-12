@@ -9,7 +9,7 @@ ROOT_DIR="$(pwd)"
 cd $ROOT_DIR
 
 EVO_VERSION="$(awk '/EVO_VERSION := / {print $3}' $ROOT_DIR/vendor/lineage/config/version.mk)"
-ANDROID_BUILD_VERSION="ap4a"
+ANDROID_BUILD_VERSION="bp1a"
 
 echo "Building Evolution X version $EVO_VERSION ($ANDROID_BUILD_VERSION)"
 echo "---------------------------"

@@ -68,7 +68,7 @@ source build/envsetup.sh
 
 ccache -M 50G -F 0
 
-lunch evolution_arm64_bgN-ap4a-userdebug 
+lunch evolution_arm64_bgN-bp1a-userdebug 
 
 make systemimage -j$(nproc --all)
 ```
